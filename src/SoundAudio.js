@@ -92,10 +92,6 @@ PLAYGROUND.SoundAudio.prototype = {
 
     sound.volume = volume * this.volume;
 
-  },
-
-  setPosition: function() {
-
   }
 
 };

@@ -1,3 +1,4 @@
+var PLAYGROUND;
 
 
 /* file: license.txt */
@@ -5767,3 +5768,4 @@ PLAYGROUND.LoadingScreen = {
   }
 
 };
+module.exports = playground;playground.Application = PLAYGROUND.Application;

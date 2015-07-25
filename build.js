@@ -5,6 +5,7 @@ var files = [
   "license.txt",
 
   "src/lib/Ease.js",
+  "src/lib/assign.js",
 
   "src/Playground.js",
   "src/Utils.js",
@@ -61,5 +62,10 @@ for (var key in builds) {
   }
 
   output.to("build/" + key);
+
+  output = 'var PLAYGROUND;\n' + output;
+  output += '\nmodule.exports = playground;';
+  output += 'playground.Application = PLAYGROUND.Application;';
+  output.to("build/commonjs/" + key);
 
 }

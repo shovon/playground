@@ -151,7 +151,7 @@ PLAYGROUND.Application = function(args) {
 
 };
 
-PLAYGROUND.Application.prototype = {
+assign(PLAYGROUND.Application.prototype, {
 
   defaults: {
     smoothing: 1,
@@ -564,6 +564,6 @@ PLAYGROUND.Application.prototype = {
 
   }
 
-};
+});
 
 PLAYGROUND.Utils.extend(PLAYGROUND.Application.prototype, PLAYGROUND.Events.prototype);
