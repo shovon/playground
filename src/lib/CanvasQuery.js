@@ -693,7 +693,9 @@
 
     },
 
-    drawAtlasFrame: function(atlas, frame, x, y) {
+    drawAtlasFrame: function(atlas, frame, x, y, scale) {
+
+      scale = scale || 1;
 
       var frame = atlas.frames[frame];
 
@@ -701,7 +703,8 @@
         atlas.image,
         frame.region,
         x - frame.width * this.alignX + frame.offset[0] + frame.region[2] * this.alignX,
-        y - frame.height * this.alignY + frame.offset[1] + frame.region[3] * this.alignY
+        y - frame.height * this.alignY + frame.offset[1] + frame.region[3] * this.alignY,
+        scale
       );
 
       return this;
