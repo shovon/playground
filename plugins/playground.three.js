@@ -9,7 +9,7 @@
 (function() {
 
   if (require) {
-    THREE = require('three');
+    var THREE = require('three');
   }
 
 

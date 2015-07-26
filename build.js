@@ -69,3 +69,24 @@ for (var key in builds) {
   output.to("build/commonjs/" + key);
 
 }
+
+function genBuild(input, outfile) {
+  var extra = builds[input];
+  var all = files.concat(extra);
+  var output = '';
+
+  all.forEach(function (el) {
+    output += '\n\n/* file: ' + el + ' */\n\n';
+    output += cat(el);
+  });
+
+  output = 'var PLAYGROUND;\n' +  output;
+  output += '\nmodule.exports = playground;';
+  output += 'playground.Application = PLAYGROUND.Application;';
+
+  // console.log(output);
+  output.to(outfile);
+}
+
+genBuild('playground.js', './index.js');
+genBuild('playground-base.js', './base.js');

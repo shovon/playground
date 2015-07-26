@@ -19,5 +19,8 @@
   "devDependencies": {
     "shelljs": "^0.5.1"
   },
+  "peerDependency": {
+    "three": "^0.71.0"
+  },
   "license": "MIT"
 }
