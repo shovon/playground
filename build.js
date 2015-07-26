@@ -5,7 +5,6 @@ var files = [
   "license.txt",
 
   "src/lib/Ease.js",
-  "src/lib/assign.js",
 
   "src/Playground.js",
   "src/Utils.js",

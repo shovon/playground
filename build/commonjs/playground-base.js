@@ -439,20 +439,6 @@ window.ease = ease;
 })();
 
 
-/* file: src/lib/assign.js */
-
-function assign(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }
-  return target;
-};
-
 /* file: src/Playground.js */
 
 PLAYGROUND = {};
@@ -884,7 +870,9 @@ PLAYGROUND.Application = function(args) {
 
 };
 
-assign(PLAYGROUND.Application.prototype, {
+PLAYGROUND.Application.prototype = {
+
+  constructor: PLAYGROUND.Application,
 
   defaults: {
     smoothing: 1,
@@ -1297,7 +1285,7 @@ assign(PLAYGROUND.Application.prototype, {
 
   }
 
-});
+};
 
 PLAYGROUND.Utils.extend(PLAYGROUND.Application.prototype, PLAYGROUND.Events.prototype);
 
